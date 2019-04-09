@@ -7,7 +7,6 @@ TKroot = Tk()
 TKroot.title("Hello")
 
 root = Frame(TKroot)
-root.place(relx=0, rely=0, relheight=1, relwidth=1)
 
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=2)
@@ -35,6 +34,7 @@ def new_button_label(event):
     butt.bind('<Button-1>', change_color)
     row_ += 1
 
+root.pack()
 
 exit_button.bind('<Button-1>', close_window)
 add_button.bind('<Button-1>', new_button_label)
