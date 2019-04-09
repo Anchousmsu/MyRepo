@@ -7,11 +7,10 @@ TKroot = Tk()
 TKroot.title("Hello")
 
 root = Frame(TKroot)
+root.place(relx=0, rely=0, relheight=1, relwidth=1)
 
-root.columnconfigure(0, weight=1)
+root.columnconfigure(0, weight=2)
 root.columnconfigure(1, weight=2)
-root.rowconfigure(0, weight=10)
-root.rowconfigure(1, weight=1)
 
 
 exit_button = Button(root, text = "Exit")
@@ -32,9 +31,9 @@ def new_button_label(event):
     lab = Label(root, text = 'Label' + str(row_))
     lab.grid(row = row_, column = 1, sticky=E+W+S+N)
     butt.bind('<Button-1>', change_color)
+    root.rowconfigure(row_, weight=2)
     row_ += 1
 
-root.pack()
 
 exit_button.bind('<Button-1>', close_window)
 add_button.bind('<Button-1>', new_button_label)
